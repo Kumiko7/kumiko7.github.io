@@ -160,6 +160,52 @@
             font-weight: 700;
             margin-bottom: -5px;
         }
+
+        /* ============================================================
+           TOGGLE BUTTON & SUBLINKS
+           ============================================================ */
+        .toggle-btn {
+            cursor: pointer;
+        }
+        
+        .toggle-btn span {
+            padding-right: 0; /* Override to center between two icons */
+        }
+
+        .toggle-icon {
+            font-size: 1rem !important;
+            color: var(--text-muted);
+            transition: transform 0.3s ease !important;
+            margin-right: 0 !important;
+            margin-left: 12px !important;
+        }
+
+        .toggle-btn.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .sublinks-container {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            padding-left: 24px; /* Indent the sublinks */
+            margin-top: -2px;
+        }
+
+        .sublinks-container.show {
+            display: flex;
+            animation: fadeInDown 0.3s ease forwards;
+        }
+
+        .sublink-btn {
+            padding: 12px 18px;
+            font-size: 0.95rem;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
@@ -264,10 +310,34 @@
         <!-- OTHER PROJECTS -->
         <div class="category">
             <h2>Other Projects</h2>
-            <a href="https://kumiko7.github.io/kumiko_site/" target="_blank" class="link-btn">
+            
+            <!-- TOGGLE BUTTON -->
+            <a href="javascript:void(0)" class="link-btn toggle-btn" onclick="toggleSublinks('other-stuff-links')">
                 <i class="fa-solid fa-globe" style="color: #48c9b0;"></i>
                 <span>Other Stuff</span>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
             </a>
+
+            <!-- HIDDEN SUBLINKS -->
+            <div id="other-stuff-links" class="sublinks-container">
+                <a href="https://kumiko7.github.io/kumiko_site/vn_sedai.html" target="_blank" class="link-btn sublink-btn">
+                    <i class="fa-solid fa-users" style="color: #ffb347;"></i>
+                    <span>VN Sedai</span>
+                </a>
+                <a href="https://kumiko7.github.io/kumiko_site/vnodle.html" target="_blank" class="link-btn sublink-btn">
+                    <i class="fa-solid fa-puzzle-piece" style="color: #93b4eb;"></i>
+                    <span>VNDB-dle</span>
+                </a>
+                <a href="https://kumiko7.github.io/kumiko_site/globle.html" target="_blank" class="link-btn sublink-btn">
+                    <i class="fa-solid fa-earth-americas" style="color: #48c9b0;"></i>
+                    <span>Globle</span>
+                </a>
+                <a href="https://kumiko7.github.io/kumiko_site/raildle.html" target="_blank" class="link-btn sublink-btn">
+                    <i class="fa-solid fa-train" style="color: #ff8787;"></i>
+                    <span>Raildle</span>
+                </a>
+            </div>
+
             <a href="https://github.com/Kumiko7" target="_blank" class="link-btn">
                 <i class="fa-brands fa-github" style="color: #ffffff;"></i>
                 <span>GitHub Profile</span>
@@ -276,5 +346,20 @@
         
     </div>
 
+    <!-- Script to handle the sublink expanding/collapsing -->
+    <script>
+        function toggleSublinks(containerId) {
+            const container = document.getElementById(containerId);
+            const btn = container.previousElementSibling;
+            
+            if (container.classList.contains('show')) {
+                container.classList.remove('show');
+                btn.classList.remove('active');
+            } else {
+                container.classList.add('show');
+                btn.classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
