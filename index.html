@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumiko | Link in Bio</title>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts for a clean aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================================
+           THEME & VARIABLES - Elegant Twilight Blue
+           ============================================================ */
+        :root {
+            /* Rich twilight blue gradient - not too dark, very stylish */
+            --bg-grad-light: #2c4266;
+            --bg-grad-dark: #121a2f;
+            
+            /* Enhanced Glassmorphism for a premium frosted look */
+            --btn-bg: rgba(255, 255, 255, 0.08);
+            --btn-bg-hover: rgba(255, 255, 255, 0.16);
+            --btn-border: rgba(255, 255, 255, 0.15);
+            --btn-border-hover: rgba(255, 255, 255, 0.35);
+            
+            /* Crisp text colors */
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        /* ============================================================
+           GLOBAL STYLES
+           ============================================================ */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        body {
+            /* Radial gradient creates a subtle, stylish spotlight effect */
+            background: radial-gradient(circle at top left, var(--bg-grad-light) 0%, var(--bg-grad-dark) 100%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        /* Main Container */
+        .container {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* ============================================================
+           PROFILE SECTION
+           ============================================================ */
+        .profile {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .profile h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* ============================================================
+           CATEGORIES & LINKS
+           ============================================================ */
+        .category {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .category h2 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        /* Single Standard Link Button */
+        .link-btn {
+            display: flex;
+            align-items: center;
+            padding: 16px 20px;
+            background: var(--btn-bg);
+            border: 1px solid var(--btn-border);
+            border-radius: 16px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 1rem;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .link-btn:hover {
+            background: var(--btn-bg-hover);
+            border-color: var(--btn-border-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .link-btn i {
+            font-size: 1.2rem;
+            width: 30px;
+            text-align: center;
+            margin-right: 12px;
+            /* Added a tiny drop shadow to icons to make them pop against the blue */
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .link-btn span {
+            flex: 1;
+            text-align: center;
+            padding-right: 42px; /* Offsets the icon width to perfectly center text */
+        }
+
+        /* Grouped Links (For Side-by-Side buttons like DMM / DLsite) */
+        .link-group {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .link-group .link-btn {
+            flex: 1;
+            justify-content: center;
+            padding: 16px 10px;
+        }
+        
+        .link-group .link-btn span {
+            padding-right: 0;
+            flex: none;
+        }
+
+        .group-label {
+            font-size: 0.85rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-bottom: -5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- PROFILE SECTION -->
+        <div class="profile">
+            <h1>Kumiko</h1>
+        </div>
+
+        <!-- SNS -->
+        <div class="category">
+            <h2>SNS</h2>
+            <a href="https://twitter.com/Ewnid" target="_blank" class="link-btn">
+                <i class="fa-brands fa-twitter" style="color: #4fc3f7;"></i>
+                <span>@Ewnid on Twitter</span>
+            </a>
+            <a href="https://bsky.app/profile/ewnid.bsky.social" target="_blank" class="link-btn">
+                <i class="fa-brands fa-bluesky" style="color: #3f9fff;"></i>
+                <span>@Ewnid on Bluesky</span>
+            </a>
+            <a href="https://discordapp.com/users/kumiko1" target="_blank" class="link-btn" title="Username: @kumiko1">
+                <i class="fa-brands fa-discord" style="color: #8da1f8;"></i>
+                <span>@kumiko1 on Discord</span>
+            </a>
+        </div>
+
+        <!-- CREATIONS -->
+        <div class="category">
+            <h2>Creations</h2>
+            
+            <div class="group-label">Game - 鮮血のシャル</div>
+            <div class="link-group">
+                <a href="https://www.dlsite.com/aix/work/=/product_id/RJ01431079.html" target="_blank" class="link-btn">
+                    <i class="fa-solid fa-cart-shopping" style="color: #f8fafc;"></i>
+                    <span>DLsite</span>
+                </a>
+                <a href="https://www.dmm.co.jp/dc/doujin/-/detail/=/cid=d_639751/" target="_blank" class="link-btn">
+                    <i class="fa-solid fa-gamepad" style="color: #f8fafc;"></i>
+                    <span>DMM</span>
+                </a>
+            </div>
+
+            <a href="https://ncode.syosetu.com/n7565fn/" target="_blank" class="link-btn">
+                <i class="fa-solid fa-book-open" style="color: #63b3ed;"></i>
+                <span>Syosetu Novel - 最後の夢の彼方へ</span>
+            </a>
+            <a href="https://www.freem.ne.jp/win/game/33435" target="_blank" class="link-btn">
+                <i class="fa-solid fa-desktop" style="color: #f6c05a;"></i>
+                <span>Freem! VN - 夏の夜明け</span>
+            </a>
+        </div>
+
+        <!-- REVIEWS -->
+        <div class="category">
+            <h2>Reviews</h2>
+            <a href="https://vndb.org/u128536/ulist?vnlist=1" target="_blank" class="link-btn">
+                <i class="fa-solid fa-database" style="color: #93b4eb;"></i>
+                <span>VNDB List</span>
+            </a>
+            <a href="https://erogamescape.dyndns.org/~ap2/ero/toukei_kaiseki/user_infomation.php?user=kumiko" target="_blank" class="link-btn">
+                <i class="fa-solid fa-chart-bar" style="color: #4ade80;"></i>
+                <span>ErogameScape</span>
+            </a>
+            <a href="https://myanimelist.net/animelist/kumiko7" target="_blank" class="link-btn">
+                <i class="fa-solid fa-list-ul" style="color: #6a91f5;"></i>
+                <span>MyAnimeList</span>
+            </a>
+        </div>
+
+        <!-- BLOG -->
+        <div class="category">
+            <h2>Blog</h2>
+            <a href="https://medium.com/@Ewnid" target="_blank" class="link-btn">
+                <i class="fa-brands fa-medium" style="color: #ffffff;"></i>
+                <span>Medium Articles</span>
+            </a>
+            <a href="https://ci-en.dlsite.com/creator/31723" target="_blank" class="link-btn">
+                <i class="fa-solid fa-pen-nib" style="color: #c084fc;"></i>
+                <span>Ci-en Page</span>
+            </a>
+        </div>
+
+        <!-- FAN CONTENT -->
+        <div class="category">
+            <h2>Fan Content</h2>
+            <a href="https://kumiko1.itch.io/sensei-overnight-a-fanfiction-ending" target="_blank" class="link-btn">
+                <i class="fa-brands fa-itch-io" style="color: #ff8787;"></i>
+                <span>Sensei Overnight - A Fanfiction Ending</span>
+            </a>
+            <a href="https://kumiko7.github.io/lessonsinlovewalkthrough/" target="_blank" class="link-btn">
+                <i class="fa-solid fa-map" style="color: #74c0fc;"></i>
+                <span>Lessons in Love Walkthrough</span>
+            </a>
+            <a href="https://kumiko7.github.io/senseiovernightwalkthrough/index.html" target="_blank" class="link-btn">
+                <i class="fa-solid fa-compass" style="color: #ff9999;"></i>
+                <span>Sensei Overnight Walkthrough</span>
+            </a>
+        </div>
+
+        <!-- OTHER PROJECTS -->
+        <div class="category">
+            <h2>Other Projects</h2>
+            <a href="https://kumiko7.github.io/kumiko_site/" target="_blank" class="link-btn">
+                <i class="fa-solid fa-globe" style="color: #48c9b0;"></i>
+                <span>Other Stuff</span>
+            </a>
+            <a href="https://github.com/Kumiko7" target="_blank" class="link-btn">
+                <i class="fa-brands fa-github" style="color: #ffffff;"></i>
+                <span>GitHub Profile</span>
+            </a>
+        </div>
+        
+    </div>
+
+</body>
+</html>
